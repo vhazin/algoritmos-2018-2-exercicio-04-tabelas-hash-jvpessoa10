@@ -41,10 +41,11 @@ int main(void) {
 
   while(N--){
     scanf("%d %d",&M,&C);
+    
     List * tabela[M];
-
-    for(int i = 0; i < M;i++){
-      tabela[i] = malloc(sizeof(List));
+    int ind;
+    for(ind = 0; ind < M;ind++){
+      tabela[ind] = malloc(sizeof(List));
     }
     
     while(C--){
@@ -53,17 +54,29 @@ int main(void) {
       appendList(tabela[getHash(value,M)],value);
       
     }
-
-    for(int i = 0; i<M;i++){
+    int i;
+    for(i = 0; i<M;i++){
       ListItem * index = malloc(sizeof(index));
-      index = tabela[i] -> start;
-
-      while(index->next != NULL){
-        printf("%d",index->value);
-        index = index->next;
+      printf("%d -> ",i);
+      if(tabela[i] -> start != NULL){
+        index = tabela[i] -> start;
+        
+        while(index != NULL){
+          printf("%d -> ",index->value);
+          index = index ->next;
+          
+        }
+        
+        
       }
-
+      printf("\\ \n");
+      
     }
+    if(N >0){
+      printf("\n");
+    }
+    
   }
-
+  
+  return 0;
 }
