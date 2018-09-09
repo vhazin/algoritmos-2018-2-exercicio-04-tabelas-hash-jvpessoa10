@@ -1,2 +1,4 @@
-for a in range(1,100):
-    print(a);
+for a in range(100):
+    print("13 100")
+    for a in range(100):
+        print(100)

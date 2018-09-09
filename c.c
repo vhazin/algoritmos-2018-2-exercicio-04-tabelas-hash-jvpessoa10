@@ -69,7 +69,7 @@ int main(void) {
         
         
       }
-      printf("\\ \n");
+      printf("\\\n");
       
     }
     if(N >0){
